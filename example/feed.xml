@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+	<channel>
+		<title>Blog de Notícias</title>
+		<link>https://www.exemplo.com</link>
+		<description>Últimas notícias e atualizações</description>
+		<item>
+			<title>Notícia 1</title>
+			<link>https://www.exemplo.com/noticia1</link>
+			<description>Esta é a descrição da primeira notícia do blog.</description>
+			<pubDate>Sat, 01 Jan 2025 10:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Notícia 2</title>
+			<link>https://www.exemplo.com/noticia2</link>
+			<description>Detalhes sobre a segunda notícia do blog.</description>
+			<pubDate>Sun, 02 Jan 2025 12:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Notícia 3</title>
+			<link>https://www.exemplo.com/noticia3</link>
+			<description>Informações relevantes da terceira notícia.</description>
+			<pubDate>Mon, 03 Jan 2025 14:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Notícia 4</title>
+			<link>https://www.exemplo.com/noticia4</link>
+			<description>Explicação sobre a quarta notícia do blog.</description>
+			<pubDate>Tue, 04 Jan 2025 16:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Notícia 5</title>
+			<link>https://www.exemplo.com/noticia5</link>
+			<description>Descrição da quinta notícia do blog.</description>
+			<pubDate>Wed, 05 Jan 2025 18:00:00 +0000</pubDate>
+		</item>
+		<item>
+			<title>Notícia 6</title>
+			<link>https://www.exemplo.com/noticia6</link>
+			<description>Última notícia do blog para testar a paginação.</description>
+			<pubDate>Thu, 06 Jan 2025 20:00:00 +0000</pubDate>
+		</item>
+	</channel>
+</rss>

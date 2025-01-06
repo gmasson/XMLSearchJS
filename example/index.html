@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Busca XML</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	<div class="container py-4">
+		<h1 class="text-center mb-4">Busca em Arquivo XML</h1>
+
+		<!-- Formulário de busca -->
+		<div class="mb-4">
+			<form method="get" action="" id="form-busca" class="d-flex justify-content-center">
+				<input type="text" name="s" id="input-busca" class="form-control me-2" placeholder="Buscar..." />
+				<button type="submit" class="btn btn-primary">Buscar</button>
+			</form>
+		</div>
+
+		<!-- Total de Resultados -->
+		<div class="text-center mb-4">Total de resultados escontrados: <span id="total-resultados"></span></div>
+
+		<!-- Resultados -->
+		<div id="resultados" class="mb-4"></div>
+
+		<!-- Paginação -->
+		<div id="paginacao" class="d-flex justify-content-center"></div>
+	</div>
+
+	<script src="../XMLSearch.js"></script>
+
+	<script>
+		// Configuração para RSS Feed
+		const configRSS = {
+			// Estrutura do XML
+			itemSelector: "item",
+			mapeamentoCampos: {
+				titulo: "title",
+				descricao: "description",
+				link: "link",
+				data: "pubDate"
+			},
+			campoData: "data",
+			
+			// Campos para busca e exibição
+			camposBusca: ["titulo", "descricao"],
+			camposExibicao: ["titulo", "descricao", "data", "link"],
+			
+			// Configurações de exibição
+			itensPorPagina: 5,
+			paginacao: true,
+			ordenacao: { campo: "titulo", direcao: "desc" },
+			
+			// Template personalizado para item
+			templateItem: (item, termoBusca) => `
+				<h5 class="mb-1">
+					${item.link ? 
+						`<a href="${item.link}" target="_blank">${item.titulo}</a>` : 
+						item.titulo
+					}
+				</h5>
+				${item.descricao ? `<p class="mb-1">${item.descricao}</p>` : ''}
+				${item.data ? `<small class="text-muted">Publicado em: ${new Date(item.data).toLocaleDateString()}</small>` : ''}
+			`
+		};
+
+		// Inicializa a busca
+		new XMLSearch('feed.xml', configRSS);
+	</script>
+</body>
+</html>
